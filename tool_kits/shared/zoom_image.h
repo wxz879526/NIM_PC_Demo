@@ -4,9 +4,9 @@
 #include <windows.h>
 
 static const std::wstring kImageJPEG = L"image/jpeg";
-static const std::wstring kImagePNG  = L"image/png";
-static const std::wstring kImageBMP  = L"image/bmp";
-static const std::wstring kImageGIF  = L"image/gif";
+static const std::wstring kImagePNG = L"image/png";
+static const std::wstring kImageBMP = L"image/bmp";
+static const std::wstring kImageGIF = L"image/gif";
 
 
 class ZoomImage
@@ -17,18 +17,18 @@ public:
 	//设置缩放后的图片保存路径
 	void SetImagePath(const std::wstring &image_path);
 	//设置为自动缩放模式
-	void SetAutoZoom(bool area_zoom,int auto_max_with,int auto_max_height);
+	void SetAutoZoom(bool area_zoom, int auto_max_with, int auto_max_height);
 	//设置为固定大小缩放模式
-	void SetSize(int width,int height);
+	void SetSize(int width, int height);
 	//设置为按比例缩放模式
 	void SetRatio(float ratio);
-	
+
 	/*
 	 *	@brief 缩放某一个图片，并保存到为指定格式
 	 *	@param filepath:要缩放的源图片路径
 	 *	@param mime_type:保存的图片类型
 	 */
-	bool Zoom(const std::wstring& filepath,std::wstring mime_type=L"image/jpeg");
+	bool Zoom(const std::wstring& filepath, std::wstring mime_type = L"image/jpeg");
 	//把图片保存为指定类型，并不缩放图片
 	bool ConvertImageFormat(std::wstring& filepath, std::wstring mime_type);
 	//获取图像的翻转类型
@@ -47,11 +47,11 @@ public:
 
 protected:
 	//判断是否需要进行缩放
-	bool IsNeedZoom(int width,int height);
+	bool IsNeedZoom(int width, int height);
 	//计算缩放后的大小，结果保存到width_和height_
-	bool CalculateSize(int width_src,int height_src);
+	bool CalculateSize(int width_src, int height_src);
 	static bool GetImageCLSID(const wchar_t* format, CLSID* pCLSID);
-	static bool SaveImage(Gdiplus::Image& image, const std::wstring& file_path,std::wstring mime_type,long quality_num = 95);
+	static bool SaveImage(Gdiplus::Image& image, const std::wstring& file_path, std::wstring mime_type, long quality_num = 95);
 	static Gdiplus::RotateFlipType GetRotateFlipType(short orientation);
 	static std::wstring GetMimeType(GUID& clsid);
 
@@ -60,7 +60,7 @@ private:
 	{
 		by_fixed_size = 0,
 		by_ratio,
-		by_auto,by_none
+		by_auto, by_none
 	};//by_fixed_size:按固定尺寸,by_ratio:按比率缩放;
 
 	std::wstring file_path_save_;

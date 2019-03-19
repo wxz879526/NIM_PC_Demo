@@ -74,10 +74,8 @@ namespace nim_comp
 			return res;
 			}
 		}
-		else 
-		{
-			return ::DefWindowProc(hWnd, uMsg, wParam, lParam);
-		}
+		
+		return ::DefWindowProc(hWnd, uMsg, wParam, lParam);
 	}
 
 	TrayIcon::TrayIcon() :

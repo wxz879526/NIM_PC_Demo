@@ -149,6 +149,11 @@ void LoginForm::InitWindow()
 
 	InitLoginData();
 	CheckAutoLogin();	
+
+	std::vector<shared::tools::FileItem> allList;
+	shared::tools::File::GetFile(L"E:\\code\\common\\6_wxz\\Meta Trader4 Test\\bin\\skin", allList, true);
+	int x = 0;
+	++x;
 }
 
 LRESULT LoginForm::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)

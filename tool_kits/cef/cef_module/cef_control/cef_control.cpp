@@ -156,6 +156,8 @@ bool CefControl::OnBeforeBrowse(CefRefPtr<CefBrowser> browser, CefRefPtr<CefFram
 {
 	if (cb_before_browser_)
 		return cb_before_browser_(browser, frame, request, is_redirect);
+
+	return false;
 }
 
 void CefControl::OnProtocolExecution(CefRefPtr<CefBrowser> browser, const CefString& url, bool& allow_os_execution)

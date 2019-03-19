@@ -10,6 +10,7 @@
 #include "gui/plugins/gif_test_plugin.h"
 #include "module/config/config_helper.h"
 #include "gui/plugins/addresbook_plugin/addresbook_plugin.h"
+#include "shared/tool.h"
 using namespace ui;
 
 void LoginForm::OnLogin()
